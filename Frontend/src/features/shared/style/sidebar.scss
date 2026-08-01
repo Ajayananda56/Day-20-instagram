@@ -1,0 +1,122 @@
+.sidebar {
+  width: 244px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  border-right: 1px solid var(--border-color);
+  background-color: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  padding: 12px 12px 20px;
+  z-index: 50;
+
+  .sidebar-logo {
+    padding: 24px 12px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    h2 {
+      font-family: 'Insta', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+    }
+  }
+
+  .nav-links {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+
+    &:hover {
+      background-color: var(--bg-hover);
+    }
+
+    &:active {
+      transform: scale(0.96);
+    }
+
+    &.active {
+      font-weight: 700;
+    }
+
+    .nav-icon {
+      margin-right: 16px;
+      flex-shrink: 0;
+      transition: transform 0.2s ease;
+    }
+
+    &:hover .nav-icon {
+      transform: scale(1.05);
+    }
+
+    .nav-label {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  .more-options {
+    margin-top: auto;
+  }
+
+  @media (max-width: 1200px) {
+    width: 72px;
+
+    .sidebar-logo h2,
+    .nav-label {
+      display: none;
+    }
+
+    .nav-item {
+      justify-content: center;
+      padding: 12px;
+      
+      .nav-icon {
+        margin-right: 0;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 60px;
+    top: auto;
+    bottom: 0;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+    border-right: none;
+    border-top: 1px solid var(--border-color);
+
+    .sidebar-logo,
+    .more-options,
+    .nav-label {
+      display: none;
+    }
+
+    .nav-links {
+      flex-direction: row;
+      justify-content: space-around;
+      width: 100%;
+    }
+
+    .nav-item {
+      padding: 12px;
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+}

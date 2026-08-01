@@ -1,0 +1,21 @@
+.app-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+
+  .main-content {
+    flex-grow: 1;
+    margin-left: 244px; // Desktop sidebar width
+    display: flex;
+    justify-content: center;
+    background-color: var(--bg-color);
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    .main-content {
+      margin-left: 0;
+      margin-bottom: 60px; // Mobile bottom nav height
+    }
+  }
+}
